@@ -32,7 +32,7 @@ def edit_content(parent: str, content: str) -> None:
 options = Options()
 options.add_argument("--headless")
 options.add_argument("--disable-gpu")
-driver = webdriver.Chrome(chrome_options=options)
+driver = webdriver.Chrome(executable_path="/usr/bin/chromedriver", chrome_options=options)
 
 driver.get("https://twitter.com/benjomit/status/1330979032888958976")
 tweet_base = wait_for_element(".css-1dbjc4n.r-j7yic.r-qklmqi.r-1adg3ll.r-1ny4l3l")
