@@ -1,2 +1,3 @@
 checkpoint/*
 .vim
+__pycache__
