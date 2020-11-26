@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "gptweet"
+version = "0.1.0"
+description = ""
+authors = ["Jeremiah Boby <mail@jeremiahboby.me>"]
+
+[tool.poetry.dependencies]
+python = "~3.6"
+Jinja2 = "^2.11.2"
+docopt = "^0.6.2"
+selenium = "^3.141.0"
+gpt-2-simple = "^0.7.1"
+tensorflow = "1.14"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+black = "^20.8b1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
