@@ -16,12 +16,17 @@ with redirect_stdout(stdout_buffer):
     gpt2.generate(
         session,
         run_name="run1",
-        temperature=0.7,
-        nsamples=1,
-        batch_size=1,
+        temperature=1.0,
+        nsamples=10,
+        batch_size=10,
         truncate="\n",
     )
 
-tweet = stdout_buffer.getvalue().replace("<Image>", "").strip()
-with open("tweet.png", "wb") as file:
-    file.write(make_tweet(tweet))
+tweets = (
+    tweet
+    for tweet in stdout_buffer.getvalue().replace("<Image>", "").strip().split("\n")
+    if tweet != "===================="
+)
+for number, tweet in enumerate(tweets):
+    with open(f"tweet-{number}.png", "wb") as file:
+        file.write(make_tweet(tweet))
